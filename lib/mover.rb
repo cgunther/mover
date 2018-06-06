@@ -191,4 +191,6 @@ module Mover
   end
 end
 
-ActiveRecord::Base.send(:include, Mover)
+ActiveSupport.on_load :active_record do
+  include Mover
+end
